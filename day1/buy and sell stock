@@ -1,0 +1,13 @@
+public static int maximumProfit(ArrayList<Integer> prices){
+        int min=Integer.MAX_VALUE,max=0,n=prices.size();
+        for(int i=0;i<n;i++){
+            if(prices.get(i)<min){
+                min=prices.get(i);
+            }
+            else if(prices.get(i)-min>max){
+                max=prices.get(i)-min;
+            }
+
+        }
+        return max;
+    }
