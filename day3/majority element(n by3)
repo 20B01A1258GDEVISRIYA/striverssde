@@ -1,0 +1,24 @@
+public static ArrayList<Integer> majorityElementII(ArrayList<Integer> arr) 
+    {
+        int cnt=0,n=arr.size(),max=(int)Math.floor(n/3);
+		HashMap<Integer,Integer> hm=new HashMap<Integer,Integer>();
+        ArrayList<Integer> ls=new ArrayList<Integer>();
+		if(n==1){
+			ls.add(arr.get(0));
+            return ls;
+		}
+		for(int i=0;i<n;i++){
+			 if(!hm.containsKey(arr.get(i))){
+				 hm.put(arr.get(i),1);
+			 }
+			 else{
+				 hm.put(arr.get(i),hm.get(arr.get(i))+1);
+			 }
+             if(hm.get(arr.get(i))>max){
+                 if(ls.indexOf(arr.get(i))==-1){
+                     ls.add(arr.get(i));
+                 }
+             }
+		}
+		return ls;
+    }
