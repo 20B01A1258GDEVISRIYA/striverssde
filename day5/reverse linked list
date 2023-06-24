@@ -1,0 +1,14 @@
+ public static LinkedListNode<Integer> reverseLinkedList(LinkedListNode<Integer> head) 
+    {
+       if(head==null){
+		   return head;
+	   }
+	   LinkedListNode<Integer> temp=head,prev=null;
+	   while(temp!=null){
+		   LinkedListNode<Integer> t=temp.next;
+		   temp.next=prev;
+		   prev=temp;
+		   temp=t;
+	   }
+	   return prev;
+    }
