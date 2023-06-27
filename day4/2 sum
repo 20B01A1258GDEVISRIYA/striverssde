@@ -1,0 +1,22 @@
+public static List<int[]> pairSum(int[] arr, int s) {
+        int n=arr.length;
+        List<int[]> ls=new ArrayList<int[]>();
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(arr[i]+arr[j]==s){
+                    int[] ans={arr[i],arr[j]};
+                    Arrays.sort(ans);
+                    ls.add(ans);
+                }
+            }
+        }
+        Collections.sort(ls,(a,b)->{
+            if(a[0]==b[0]){
+                return Integer.compare(a[1],b[1]);
+            }
+            else{
+                return Integer.compare(a[0],b[0]);
+            }
+        });
+        return ls;
+    }
