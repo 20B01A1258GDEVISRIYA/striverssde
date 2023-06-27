@@ -1,0 +1,13 @@
+public static int LongestSubsetWithZeroSum(ArrayList<Integer> arr) {
+	   int n=arr.size(),cnt=0,max=0;
+       for(int i=0;i<n;i++){
+		   int sum=0;
+		   for(int j=i;j<n;j++){
+			   sum+=arr.get(j);
+			   if(sum==0){
+                  max=Math.max(max,j-i+1);
+		       }
+		   }
+	   }
+	   return max;
+	}
